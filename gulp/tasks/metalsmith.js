@@ -2,6 +2,7 @@
 import metalsmith from 'metalsmith'
 import assets from 'metalsmith-assets'
 import collections from 'metalsmith-collections'
+import filenames from 'metalsmith-filenames'
 import htmlMinifier from 'metalsmith-html-minifier'
 import ignore from 'metalsmith-ignore'
 import inPlace from 'metalsmith-in-place'
@@ -26,6 +27,7 @@ class Metalsmith {
       .use(ignore(config.metalsmith.ignore))
       .use(markdown(config.metalsmith.markdown).use(markdownAttr))
       .use(permalinks(config.metalsmith.permalinks))
+      .use(filenames())
       .use(inPlace(config.metalsmith.inPlace))
       .use(layouts(config.metalsmith.layouts))
       .use(htmlMinifier())

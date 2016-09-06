@@ -1,8 +1,6 @@
 
-# Metalsmith playground
+# Metalsmith boilerplate
 
 ## TODO
 
-- [ ] add metalsmith-linkcheck
-- [ ] add work with scripts || gulp-webpack
-- [ ] refactoring
+- [ ] write TODO

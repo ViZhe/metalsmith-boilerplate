@@ -1,0 +1,14 @@
+[
+  {
+    "type": "cat",
+    "weight": 3
+  },
+  {
+    "type": "dog",
+    "weight": 8
+  },
+  {
+    "type": "rat",
+    "weight": 0.5
+  }
+]

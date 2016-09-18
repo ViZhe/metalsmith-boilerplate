@@ -1,0 +1,36 @@
+---
+layout: simple.ejs
+
+title: Simple page
+description:
+---
+
+
+<h1 class="b-heading b-heading_level_1 b-heading_first"><%= title %></h1>
+
+
+<h2 class="b-heading b-heading_level_2">Articles (collection example)</h2>
+<div class="b-article-wrapper">
+  <% collections.articles.forEach(article => { %>
+    <%- include('/article', {article}) %>
+  <% }) %>
+</div>
+
+
+<h2 class="b-heading b-heading_level_2">FAQ (hidden collection example)</h2>
+
+<div class="b-faq-wrapper">
+  <% collections.faq.forEach(item => { %>
+    <%- include ./source/includes/faq %>
+      <%- include('/faq', {item}) %>
+  <% }) %>
+</div>
+
+
+<h2 class="b-heading b-heading_level_2">Animals (data example)</h2>
+
+<div class="b-animal-wrapper">
+  <% animals.forEach(animal => { %>
+    <%- include('/animal', {animal}) %>
+  <% }) %>
+</div>

@@ -173,7 +173,7 @@ if (isProduction) {
   }))
 }
 
-metalsmith.build(err => {
+metalsmith.build((err) => {
   if (err) {
     console.log(err)
   }

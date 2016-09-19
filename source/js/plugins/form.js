@@ -33,7 +33,7 @@ class Form {
     $.ajax({
       url: '',
       data: $thisFrom.serialize()
-    }).done(data => {
+    }).done((data) => {
       console.log(data)
       if (this.options.showErrors) {
         $(`.${this.options.classElemError}`).remove()

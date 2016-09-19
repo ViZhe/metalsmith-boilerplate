@@ -11,6 +11,4 @@ node_js:
 
 script:
   - npm run test
-  - npm run dev
   - npm run prod
-  

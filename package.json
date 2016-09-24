@@ -59,6 +59,6 @@
   "private": true,
   "license": "MIT",
   "dependencies": {
-    "jquery": "^2.2.4"
+    "jquery": "^3.1.1"
   }
 }

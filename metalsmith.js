@@ -1,5 +1,6 @@
 
 import Metalsmith from 'metalsmith'
+import assets from 'metalsmith-assets'
 import beautify from 'metalsmith-beautify'
 import browserSync from 'metalsmith-browser-sync'
 import collections from 'metalsmith-collections'
@@ -142,6 +143,10 @@ const metalsmith = new Metalsmith(__dirname)
   .use(beautify({
     indent_char: ' ',
     indent_size: 2
+  }))
+  .use(assets({
+    source: './source/static', // relative to the working directory
+    destination: './' // relative to the build directory
   }))
 
 if (isProduction) {

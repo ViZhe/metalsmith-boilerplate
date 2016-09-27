@@ -1,4 +1,5 @@
 
+import fs from 'fs'
 import Metalsmith from 'metalsmith'
 import assets from 'metalsmith-assets'
 import beautify from 'metalsmith-beautify'
@@ -21,7 +22,17 @@ import ExtractTextPlugin from 'extract-text-webpack-plugin'
 import autoprefixer from 'autoprefixer'
 import cssnano from 'cssnano'
 
+
 const isProduction = process.env.NODE_ENV === 'production'
+
+const getMetadata = () => {
+  const obj = {}
+  const files = fs.readdirSync(`${__dirname}/content/data/`)
+  for (const name of files) {
+    obj[name.replace(/\.[^.]+$/, '')] = `data/${name}`
+  }
+  return obj
+}
 
 const metalsmith = new Metalsmith(__dirname)
   .source('./content/')
@@ -32,9 +43,7 @@ const metalsmith = new Metalsmith(__dirname)
   })
   .use(paths())
   .use(filenames())
-  .use(metadata({
-    animals: 'data/animals.json'
-  }))
+  .use(metadata(getMetadata()))
   .use(markdown({
     html: true,
     linkify: true,

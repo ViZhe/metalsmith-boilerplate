@@ -154,8 +154,8 @@ const metalsmith = new Metalsmith(__dirname)
     indent_size: 2
   }))
   .use(assets({
-    source: './source/static', // relative to the working directory
-    destination: './' // relative to the build directory
+    source: './source/static',
+    destination: './'
   }))
 
 if (isProduction) {

@@ -10,7 +10,9 @@
     "start": "babel-node metalsmith.js",
     "dev": "NODE_ENV=develompent npm start",
     "prod": "NODE_ENV=production npm start",
-    "test": "stylint ./source/css/ && eslint ./source/js/"
+    "test": "npm run test:styles && npm run test:scripts",
+    "test:styles": "stylint ./source/css/",
+    "test:scripts": "eslint ./source/js/"
   },
   "devDependencies": {
     "autoprefixer": "^6.4.1",

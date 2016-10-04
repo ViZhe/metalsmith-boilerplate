@@ -4,58 +4,63 @@ import $ from 'jquery'
 
 class Form {
   constructor(el, options) {
-    console.log('constructor')
-    console.log(options)
     this.el = el
-
+    this.sending = false
     this.options = {
-      target: '.js-form',
+      target: '',
       classSuccessBlock: 'b-form-success',
-      classFieldError: 'b-form__field_error',
+      classFieldError: 'is-error',
       classElemError: 'b-form__error',
-      showErrors: true,
+      showErrors: false,
       ...options
     }
 
     this.initEvents()
   }
   initEvents() {
-    console.log('initEvents')
-
-    this.el.on('submit', '.js-form', $.proxy(this.submitForm, this))
+    this.el.on('submit', this.options.target, $.proxy(this.submitForm, this))
   }
   submitForm(e) {
-    console.log('submitForm')
-
     e.preventDefault()
-    const $thisFrom = $(e.target)
+
+    if (this.sending) {
+      return
+    }
+
+    this.sending = true
+    const $thisForm = $(e.target)
 
     $.ajax({
+      method: 'post',
       url: '',
-      data: $thisFrom.serialize()
+      data: $thisForm.serialize()
     }).done((data) => {
-      console.log(data)
+      this.sending = false
+
       if (this.options.showErrors) {
         $(`.${this.options.classElemError}`).remove()
       }
       $(`.${this.options.classFieldError}`).removeClass(this.options.classFieldError)
 
-      if (data.status === 500) {
-        $.each(data.errors, (key, value) => {
-          $thisFrom
-            .find(`[name=${key}]`)
-            .addClass(this.options.classFieldError)
-            .before(
-              this.options.showErrors
-                ? `<span class="${this.options.classElemError}">${value}</span>`
-                : ''
-            )
-        })
+      if (data.status === 400 && data.errors) {
+        if (data.error) {
+          console.error(data)
+        }
+        if (data.errors) {
+          $.each(data.errors, (key, value) => {
+            const $field = $thisForm.find(`[name=${key}]`)
+            $field.addClass(this.options.classFieldError)
+
+            if (this.options.showErrors) {
+              $field.before(`<span class="${this.options.classElemError}">${value}</span>`)
+            }
+          })
+        }
       } else if (data.status === 200) {
-        $thisFrom
+        $thisForm
         .before(`<div class="${this.options.classSuccessBlock}">
           <div class="${this.options.classSuccessBlock}__title">Спасибо!</div>
-            <p>${data.message}</p>
+            <p>Форма успешно отправлена.</p>
           </div>`)
         .remove()
       }

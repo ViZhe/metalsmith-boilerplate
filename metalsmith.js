@@ -114,6 +114,11 @@ const metalsmith = new Metalsmith(__dirname)
       new wp.optimize.OccurenceOrderPlugin(),
       new wp.optimize.CommonsChunkPlugin('jquery', '[name].[chunkhash].js'),
       new ExtractTextPlugin('[name].[chunkhash].css'),
+      new wp.ProvidePlugin({
+        $: 'jquery',
+        jQuery: 'jquery',
+        'window.jQuery': 'jquery'
+      }),
       new wp.optimize.UglifyJsPlugin({
         compress: {
           warnings: false

@@ -50,7 +50,7 @@
     "metalsmith-paths": "^2.1.2",
     "metalsmith-permalinks": "^0.5.0",
     "ms-webpack": "^1.0.2",
-    "postcss-loader": "^0.13.0",
+    "postcss-loader": "^1.0.0",
     "postcss-svg": "^1.0.6",
     "style-loader": "^0.13.1",
     "stylint": "^1.5.6",

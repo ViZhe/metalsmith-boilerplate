@@ -37,7 +37,7 @@
     "metalsmith-beautify": "^0.1.0",
     "metalsmith-browser-sync": "^1.1.1",
     "metalsmith-changed": "^3.0.0",
-    "metalsmith-collections": "^0.7.0",
+    "metalsmith-collections": "^0.8.0",
     "metalsmith-data-markdown": "0.0.3",
     "metalsmith-filenames": "^1.0.0",
     "metalsmith-html-minifier": "^2.1.0",

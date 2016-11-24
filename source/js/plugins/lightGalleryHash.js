@@ -1,5 +1,4 @@
 /* eslint-disable */
-import $ from 'jquery'
 
 /*! lightgallery - v1.2.14 - 2016-01-20
 * http://sachinchoolur.github.io/lightGallery/

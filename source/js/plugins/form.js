@@ -1,7 +1,4 @@
 
-import $ from 'jquery'
-
-
 class Form {
   constructor(el, options) {
     this.el = el

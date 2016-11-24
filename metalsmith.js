@@ -82,6 +82,10 @@ const metalsmith = new Metalsmith(__dirname)
           exclude: /node_modules/
         },
         {
+          test: require.resolve('jquery'),
+          loader: 'expose?jQuery!expose?$'
+        },
+        {
           test: /\.styl$/,
           loader: ExtractTextPlugin.extract(
             'style',
@@ -111,14 +115,7 @@ const metalsmith = new Metalsmith(__dirname)
       cssnano
     ]),
     plugins: [
-      new wp.optimize.OccurenceOrderPlugin(),
-      new wp.optimize.CommonsChunkPlugin('jquery', '[name].[chunkhash].js'),
       new ExtractTextPlugin('[name].[chunkhash].css'),
-      new wp.ProvidePlugin({
-        $: 'jquery',
-        jQuery: 'jquery',
-        'window.jQuery': 'jquery'
-      }),
       new wp.optimize.UglifyJsPlugin({
         compress: {
           warnings: false

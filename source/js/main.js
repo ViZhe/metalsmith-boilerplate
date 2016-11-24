@@ -1,6 +1,4 @@
 
-import $ from 'jquery'
-
 import scrollToTop from './plugins/scrollToTop'
 import './plugins/form'
 import './plugins/lightGallery'

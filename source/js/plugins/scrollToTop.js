@@ -1,7 +1,4 @@
 
-import $ from 'jquery'
-
-
 const scrollToTop = (config) => {
   const options = {
     selector: '.js-scroll-top',

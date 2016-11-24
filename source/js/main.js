@@ -21,3 +21,7 @@ $('body').form()
 
 // $('*').on('click', () => {
 // })
+
+navigator.serviceWorker.register('serviceWorker.js', {
+  scope: '.'
+})

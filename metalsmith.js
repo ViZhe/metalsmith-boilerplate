@@ -21,6 +21,7 @@ import wp from 'webpack'
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
 import autoprefixer from 'autoprefixer'
 import cssnano from 'cssnano'
+import serviceworker from './plugins/metalsmith-serviceworker'
 
 
 const isProduction = process.env.NODE_ENV === 'production'
@@ -162,6 +163,7 @@ const metalsmith = new Metalsmith(__dirname)
     source: './source/static',
     destination: './'
   }))
+  .use(serviceworker())
 
 if (isProduction) {
   metalsmith.use(imagemin({

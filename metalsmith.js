@@ -28,9 +28,9 @@ const isProduction = process.env.NODE_ENV === 'production'
 const getMetadata = () => {
   const obj = {}
   const files = fs.readdirSync(`${__dirname}/content/data/`)
-  for (const name of files) {
+  files.forEach((name) => {
     obj[name.replace(/\.[^.]+$/, '')] = `data/${name}`
-  }
+  })
   return obj
 }
 

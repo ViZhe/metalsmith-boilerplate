@@ -1,7 +1,8 @@
 
 # Metalsmith boilerplate
 
-## TODO
-
-- [ ] add linkchecker
-- [ ] add service-worker.js
+```
+npm install
+npm start     // run browser sync
+npm run prod  // build project
+```

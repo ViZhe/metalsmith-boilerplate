@@ -6,10 +6,10 @@ description:
 ---
 
 
-<h1 class="b-heading b-heading_level_1 b-heading_first"><%= title %></h1>
+<h1><%= title %></h1>
 
 
-<h2 class="b-heading b-heading_level_2">Articles (collection example)</h2>
+<h2>Articles (collection example)</h2>
 <div class="b-article-wrapper">
   <% collections.articles.forEach(article => { %>
     <%- include('/article', {article}) %>
@@ -17,7 +17,7 @@ description:
 </div>
 
 
-<h2 class="b-heading b-heading_level_2">FAQ (hidden collection example)</h2>
+<h2>FAQ (hidden collection example)</h2>
 
 <div class="b-faq-wrapper">
   <% collections.faq.forEach(item => { %>
@@ -26,7 +26,7 @@ description:
 </div>
 
 
-<h2 class="b-heading b-heading_level_2">Animals (data example)</h2>
+<h2>Animals (data example)</h2>
 
 <div class="b-animal-wrapper">
   <% animals.forEach(animal => { %>

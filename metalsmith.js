@@ -12,7 +12,6 @@ import imagemin from 'metalsmith-imagemin/lib/node6'
 import inPlace from 'metalsmith-in-place'
 import layouts from 'metalsmith-layouts'
 import markdown from 'metalsmith-markdownit'
-import markdownAttr from 'markdown-it-attrs'
 import metadata from 'metalsmith-metadata'
 import paths from 'metalsmith-paths'
 import permalinks from 'metalsmith-permalinks'
@@ -49,7 +48,7 @@ const metalsmith = new Metalsmith(__dirname)
     linkify: true,
     typographer: true,
     breaks: true
-  }).use(markdownAttr))
+  }))
   .use(collections({
     articles: {
       pattern: 'articles/*.html',

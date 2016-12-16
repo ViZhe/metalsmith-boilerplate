@@ -8,21 +8,21 @@ description:
 <h1><%= title %></h1>
 
 <h2>Articles (collection example)</h2>
-<div class="b-article-wrapper">
+<div class="articleList">
   <% collections.articles.forEach(article => { %>
     <%- include('/article', {article}) %>
   <% }) %>
 </div>
 
 <h2>FAQ (hidden collection example)</h2>
-<div class="b-faq-wrapper">
+<div class="faqList">
   <% collections.faq.forEach(item => { %>
     <%- include('/faq', {item}) %>
   <% }) %>
 </div>
 
 <h2>Animals (data example)</h2>
-<div class="b-animal-wrapper">
+<div class="animalList">
   <% animals.forEach(animal => { %>
     <%- include('/animal', {animal}) %>
   <% }) %>

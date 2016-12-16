@@ -1,13 +1,12 @@
 
-import scrollToTop from './plugins/scrollToTop'
+// import scrollUp from './plugins/scrollUp'
 import './plugins/form'
 
-
-scrollToTop()
 
 $('body').form()
 
 // $(document).ready(() => {
+//   scrollUp()
 // })
 
 // $('*').on('click', () => {

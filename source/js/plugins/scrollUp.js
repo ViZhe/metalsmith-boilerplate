@@ -1,8 +1,8 @@
 
-const scrollToTop = (config) => {
+const scrollUp = (config) => {
   const options = {
-    selector: '.js-scroll-top',
-    class: 'm-scroll-top_show',
+    selector: '.js-scrollUp',
+    class: 'scrollUp_show',
     ...config
   }
 
@@ -25,4 +25,4 @@ const scrollToTop = (config) => {
 }
 
 
-export default scrollToTop
+export default scrollUp

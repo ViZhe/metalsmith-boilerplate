@@ -30,7 +30,7 @@
     "eslint-plugin-import": "^2.0.1",
     "expose-loader": "^0.7.1",
     "extract-text-webpack-plugin": "^1.0.1",
-    "file-loader": "^0.9.0",
+    "file-loader": "^0.10.0",
     "group-css-media-queries": "^1.4.1",
     "metalsmith": "^2.2.0",
     "metalsmith-assets": "^0.1.0",
